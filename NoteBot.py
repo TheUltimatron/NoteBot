@@ -4,7 +4,6 @@ import os
 
 note_file = 'notes.json'
 
-# Initialize notes file if it doesn't exist
 if not os.path.exists(note_file):
     with open(note_file, 'w') as file:
         json.dump({}, file)
@@ -40,4 +39,5 @@ def handle_message(message):
             json.dump(notes, file)
         bot.send_message(message.chat.id, "Заметка сохранена!")
         
+
 bot.polling()
